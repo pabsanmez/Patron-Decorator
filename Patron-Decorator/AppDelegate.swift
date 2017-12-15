@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func loadCorrespondingLayout(){
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = MainTableViewController()
+        let navigationController = UINavigationController(rootViewController: MainTableViewController())
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
 

@@ -20,6 +20,8 @@
 		22046C9D1FE30381009E5A48 /* ItemPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22046C9B1FE30381009E5A48 /* ItemPriceTableViewCell.xib */; };
 		22046C9F1FE304DA009E5A48 /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22046C9E1FE304DA009E5A48 /* MainTableViewModel.swift */; };
 		22046CA21FE306A6009E5A48 /* MainTableCellsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22046CA11FE306A6009E5A48 /* MainTableCellsEnum.swift */; };
+		22F4A1E11FE3AFAD0069EF55 /* MainTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F4A1E01FE3AFAD0069EF55 /* MainTableFooterView.swift */; };
+		22F4A1E31FE3AFBD0069EF55 /* MainTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F4A1E21FE3AFBD0069EF55 /* MainTableFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		22046C9B1FE30381009E5A48 /* ItemPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemPriceTableViewCell.xib; sourceTree = "<group>"; };
 		22046C9E1FE304DA009E5A48 /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
 		22046CA11FE306A6009E5A48 /* MainTableCellsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellsEnum.swift; sourceTree = "<group>"; };
+		22F4A1E01FE3AFAD0069EF55 /* MainTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableFooterView.swift; sourceTree = "<group>"; };
+		22F4A1E21FE3AFBD0069EF55 /* MainTableFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +163,9 @@
 		22046C911FE3028E009E5A48 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22046C931FE302D8009E5A48 /* MainTableViewController.swift */,
 				22046C991FE3035D009E5A48 /* Cells */,
 				22046C971FE30348009E5A48 /* Views */,
-				22046C931FE302D8009E5A48 /* MainTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				22046C941FE302D8009E5A48 /* MainTableViewController.xib */,
+				22F4A1E01FE3AFAD0069EF55 /* MainTableFooterView.swift */,
+				22F4A1E21FE3AFBD0069EF55 /* MainTableFooterView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				22046C961FE302D8009E5A48 /* MainTableViewController.xib in Resources */,
 				22046C9D1FE30381009E5A48 /* ItemPriceTableViewCell.xib in Resources */,
 				22046C6C1FE30198009E5A48 /* LaunchScreen.storyboard in Resources */,
+				22F4A1E31FE3AFBD0069EF55 /* MainTableFooterView.xib in Resources */,
 				22046C691FE30197009E5A48 /* Assets.xcassets in Resources */,
 				22046C671FE30197009E5A48 /* Main.storyboard in Resources */,
 			);
@@ -340,6 +347,7 @@
 				22046C641FE30197009E5A48 /* ViewController.swift in Sources */,
 				22046C951FE302D8009E5A48 /* MainTableViewController.swift in Sources */,
 				22046C621FE30197009E5A48 /* AppDelegate.swift in Sources */,
+				22F4A1E11FE3AFAD0069EF55 /* MainTableFooterView.swift in Sources */,
 				22046C9F1FE304DA009E5A48 /* MainTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -494,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -508,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Patron-Decorator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Learning.Patron-Decorator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,6 +531,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Patron-Decorator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Learning.Patron-Decorator";
 				PRODUCT_NAME = "$(TARGET_NAME)";

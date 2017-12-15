@@ -15,13 +15,28 @@ class MainTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         setTableView()
-
+      
+    }
+  
+    func configureUI() {
+        self.title = "Decorator Pattern"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+    }
+  
+    @objc func addTapped() {
     }
     
     private func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
+        if let view = UINib(nibName: "MainTableFooterView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView {
+          if let view = view as? MainTableFooterView {
+            view.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+            tableView.tableFooterView = view
+          }
+        }
         registerCells()
     }
     
@@ -31,10 +46,8 @@ class MainTableViewController: UIViewController {
             let nib = UINib(nibName: cell.idCell, bundle: nil)
             tableView.register(nib, forCellReuseIdentifier: cell.idCell)
         }
-        
     }
 }
-
 
 //Methods TableView Delegate & DataSource.
 extension MainTableViewController: UITableViewDataSource, UITableViewDelegate {
@@ -48,6 +61,12 @@ extension MainTableViewController: UITableViewDataSource, UITableViewDelegate {
         cell.lblPrice.text = "+100"
         return cell
     }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if (editingStyle == UITableViewCellEditingStyle.delete) {
+      //Eliminar celda
+    }
+  }
     
 }
 
