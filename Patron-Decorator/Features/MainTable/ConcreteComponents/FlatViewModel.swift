@@ -10,7 +10,7 @@ import Foundation
 
 class FlatViewModel: HouseProtocol {
   
-  var cost: Int {
+  var totalCost: Int {
     return 11000
   }
   

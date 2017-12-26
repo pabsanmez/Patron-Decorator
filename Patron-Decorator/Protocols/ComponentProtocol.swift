@@ -7,7 +7,7 @@
 //
 
 protocol HouseProtocol {
-  
-  var description : String { get }
-  var cost: Int { get }
+    
+    var description : String { get }
+    var totalCost: Int { get }
 }

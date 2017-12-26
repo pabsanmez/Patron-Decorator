@@ -14,8 +14,8 @@ final class AddiMacProHouseExtra: HouseExtrasDecorator {
         return self.description + "iMac"
     }
     
-    override var cost: Int {
-        return self.cost + 13000
+    override var totalCost: Int {
+        return self.totalCost + 13000
     }
     
     required init(houseType: HouseProtocol) {

@@ -10,7 +10,7 @@ import Foundation
 
 class CottageViewModel: HouseProtocol {
   
-  var cost: Int {
+  var totalCost: Int {
     return 4000
   }
   

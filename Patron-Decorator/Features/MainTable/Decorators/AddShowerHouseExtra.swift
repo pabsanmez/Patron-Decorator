@@ -14,8 +14,8 @@ final class AddShowerHouseExtra: HouseExtrasDecorator {
         return self.description + "shower"
     }
     
-    override var cost: Int {
-        return self.cost + 400
+    override var totalCost: Int {
+        return self.totalCost + 400
     }
     
     required init(houseType: HouseProtocol) {

@@ -20,7 +20,6 @@
 		22046C9D1FE30381009E5A48 /* ItemPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22046C9B1FE30381009E5A48 /* ItemPriceTableViewCell.xib */; };
 		22046C9F1FE304DA009E5A48 /* MainTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22046C9E1FE304DA009E5A48 /* MainTableViewModel.swift */; };
 		22046CA21FE306A6009E5A48 /* MainTableCellsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22046CA11FE306A6009E5A48 /* MainTableCellsEnum.swift */; };
-		2274B8171FF2BC2500C63B3A /* HouseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B8161FF2BC2500C63B3A /* HouseViewModel.swift */; };
 		2274B8191FF2BC7600C63B3A /* CottageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B8181FF2BC7600C63B3A /* CottageViewModel.swift */; };
 		2274B81B1FF2BC9900C63B3A /* FlatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B81A1FF2BC9900C63B3A /* FlatViewModel.swift */; };
 		2274B81F1FF2BCDD00C63B3A /* ComponentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B81E1FF2BCDD00C63B3A /* ComponentProtocol.swift */; };
@@ -28,6 +27,7 @@
 		2274B8261FF2C0C100C63B3A /* AddShowerHouseExtra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B8251FF2C0C100C63B3A /* AddShowerHouseExtra.swift */; };
 		2274B8281FF2C0F400C63B3A /* AddAppleTvHouseExtra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B8271FF2C0F400C63B3A /* AddAppleTvHouseExtra.swift */; };
 		2274B82A1FF2C10500C63B3A /* AddiMacProHouseExtra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B8291FF2C10500C63B3A /* AddiMacProHouseExtra.swift */; };
+		2274B82C1FF2D07E00C63B3A /* HouseTypesExtrasEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274B82B1FF2D07E00C63B3A /* HouseTypesExtrasEnum.swift */; };
 		22F4A1E11FE3AFAD0069EF55 /* MainTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F4A1E01FE3AFAD0069EF55 /* MainTableFooterView.swift */; };
 		22F4A1E31FE3AFBD0069EF55 /* MainTableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F4A1E21FE3AFBD0069EF55 /* MainTableFooterView.xib */; };
 /* End PBXBuildFile section */
@@ -69,7 +69,6 @@
 		22046C9B1FE30381009E5A48 /* ItemPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemPriceTableViewCell.xib; sourceTree = "<group>"; };
 		22046C9E1FE304DA009E5A48 /* MainTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModel.swift; sourceTree = "<group>"; };
 		22046CA11FE306A6009E5A48 /* MainTableCellsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCellsEnum.swift; sourceTree = "<group>"; };
-		2274B8161FF2BC2500C63B3A /* HouseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewModel.swift; sourceTree = "<group>"; };
 		2274B8181FF2BC7600C63B3A /* CottageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CottageViewModel.swift; sourceTree = "<group>"; };
 		2274B81A1FF2BC9900C63B3A /* FlatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatViewModel.swift; sourceTree = "<group>"; };
 		2274B81E1FF2BCDD00C63B3A /* ComponentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentProtocol.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		2274B8251FF2C0C100C63B3A /* AddShowerHouseExtra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShowerHouseExtra.swift; sourceTree = "<group>"; };
 		2274B8271FF2C0F400C63B3A /* AddAppleTvHouseExtra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppleTvHouseExtra.swift; sourceTree = "<group>"; };
 		2274B8291FF2C10500C63B3A /* AddiMacProHouseExtra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddiMacProHouseExtra.swift; sourceTree = "<group>"; };
+		2274B82B1FF2D07E00C63B3A /* HouseTypesExtrasEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseTypesExtrasEnum.swift; sourceTree = "<group>"; };
 		22F4A1E01FE3AFAD0069EF55 /* MainTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableFooterView.swift; sourceTree = "<group>"; };
 		22F4A1E21FE3AFBD0069EF55 /* MainTableFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				22046CA11FE306A6009E5A48 /* MainTableCellsEnum.swift */,
+				2274B82B1FF2D07E00C63B3A /* HouseTypesExtrasEnum.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -227,7 +228,6 @@
 		2274B81C1FF2BCAD00C63B3A /* ConcreteComponents */ = {
 			isa = PBXGroup;
 			children = (
-				2274B8161FF2BC2500C63B3A /* HouseViewModel.swift */,
 				2274B8181FF2BC7600C63B3A /* CottageViewModel.swift */,
 				2274B81A1FF2BC9900C63B3A /* FlatViewModel.swift */,
 			);
@@ -390,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2274B82C1FF2D07E00C63B3A /* HouseTypesExtrasEnum.swift in Sources */,
 				2274B8281FF2C0F400C63B3A /* AddAppleTvHouseExtra.swift in Sources */,
 				22046CA21FE306A6009E5A48 /* MainTableCellsEnum.swift in Sources */,
 				22046C9C1FE30381009E5A48 /* ItemPriceTableViewCell.swift in Sources */,
@@ -403,7 +404,6 @@
 				2274B8241FF2BF8000C63B3A /* HouseExtrasDecorator.swift in Sources */,
 				22046C9F1FE304DA009E5A48 /* MainTableViewModel.swift in Sources */,
 				2274B8261FF2C0C100C63B3A /* AddShowerHouseExtra.swift in Sources */,
-				2274B8171FF2BC2500C63B3A /* HouseViewModel.swift in Sources */,
 				2274B81F1FF2BCDD00C63B3A /* ComponentProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

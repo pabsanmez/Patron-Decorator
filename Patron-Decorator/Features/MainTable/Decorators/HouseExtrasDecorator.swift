@@ -14,8 +14,8 @@ class HouseExtrasDecorator: HouseProtocol {
         return houseType.description + " with the following extras:"
     }
     
-    var cost: Int {
-        return houseType.cost
+    var totalCost: Int {
+        return houseType.totalCost
     }
     
     let houseType: HouseProtocol

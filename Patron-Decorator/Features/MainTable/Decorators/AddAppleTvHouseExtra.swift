@@ -14,8 +14,8 @@ final class AddAppleTvHouseExtra: HouseExtrasDecorator {
         return self.description + "apple TV"
     }
     
-    override var cost: Int {
-        return self.cost + 200
+    override var totalCost: Int {
+        return self.totalCost + 200
     }
     
     required init(houseType: HouseProtocol) {

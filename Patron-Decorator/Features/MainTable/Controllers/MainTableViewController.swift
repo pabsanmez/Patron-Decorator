@@ -26,21 +26,44 @@ class MainTableViewController: UIViewController {
     }
   
     @objc func addTapped() {
-        viewModel.addNewItem(newItem: HouseViewModel())
-        viewModel.addNewItem(newItem: AddShowerHouseExtra(houseType: viewModel.getItems.last!))
-        tableView.reloadData()
+        showAlert()
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: viewModel.getAlertTitle,
+                                      message: viewModel.getAlertMessage,
+                                      preferredStyle: .alert)
+        
+        for newAction in viewModel.getActionArray {
+            let action = UIAlertAction(title: newAction.getCellTitle, style: .default, handler: {
+                [weak self]
+                _ in
+                self?.viewModel.addNewItem(newItem: newAction)
+                self?.tableView.reloadData()
+            })
+            alert.addAction(action)
+        }
+        // Cancel button
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
     
     private func setTableView(){
         tableView.dataSource = self
         tableView.delegate = self
-        if let view = UINib(nibName: "MainTableFooterView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView {
-          if let view = view as? MainTableFooterView {
-            view.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
-            tableView.tableFooterView = view
-          }
-        }
+        setTableFooter()
         registerCells()
+    }
+    
+    private func setTableFooter() {
+        if let view = UINib(nibName: "MainTableFooterView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView {
+            if let view = view as? MainTableFooterView {
+                view.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+                tableView.tableFooterView = view
+            }
+        }
     }
     
     private func registerCells(){
@@ -60,8 +83,8 @@ extension MainTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableCellsEnum.itemPriceCell.idCell, for: indexPath) as! ItemPriceTableViewCell
-        cell.lblItem.text = "Ducha"
-        cell.lblPrice.text = "+100"
+        cell.lblItem.text = viewModel.getItemTitle(index: indexPath.row)
+        cell.lblPrice.text = viewModel.getItemCost(index: indexPath.row)
         return cell
     }
   

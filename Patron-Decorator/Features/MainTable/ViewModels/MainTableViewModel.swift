@@ -10,9 +10,10 @@ import Foundation
 
 final class MainTableViewModel {
     
-    fileprivate var items = [HouseProtocol]()
+    fileprivate var items = [HouseTypesExtrasEnum]()
+    fileprivate var itemCompleted: HouseProtocol?
     
-    var getItems: [HouseProtocol] {
+    var getItems: [HouseTypesExtrasEnum] {
         return items
     }
     
@@ -20,12 +21,75 @@ final class MainTableViewModel {
         return items.count
     }
     
-    func addNewItem(newItem: HouseProtocol) {
-        items.append(newItem)
+    func addNewItem(newItem: HouseTypesExtrasEnum) {
+        switch newItem {
+        case .cottage:
+            items = [.cottage]
+            itemCompleted = CottageViewModel()
+        case .flat:
+            items = [.flat]
+            itemCompleted = FlatViewModel()
+        case .addShower:
+            guard var itemCompleted = itemCompleted else { return }
+            items.append(.addShower)
+            itemCompleted = AddShowerHouseExtra(houseType: itemCompleted)
+        case .addAppleTv:
+             guard var itemCompleted = itemCompleted else { return }
+            items.append(.addAppleTv)
+            itemCompleted = AddAppleTvHouseExtra(houseType: itemCompleted)
+        case .addiMacPro:
+             guard var itemCompleted = itemCompleted else { return }
+            items.append(.addiMacPro)
+            itemCompleted = AddiMacProHouseExtra(houseType: itemCompleted)
+        }
     }
     
     func removeItem(index: Int) {
-        items.remove(at: index)
+        if index == 0 {
+            items.removeAll()
+        } else {
+            items.remove(at: index)
+        }
+    }
+    
+    var getAlertTitle: String {
+        if items.count == 0 {
+            return "Your house"
+        } else {
+            return "Extras"
+        }
+    }
+    
+    var getAlertMessage: String {
+        if items.count == 0 {
+            return "Where do you prefer to life?"
+        } else {
+            return "Give more glamour to your new home!"
+        }
+    }
+    
+    func getActionTitle(index: Int) -> String {
+        if items.count == 0 {
+            return HouseTypesExtrasEnum.allHouseTypes[index].getCellTitle
+        } else {
+            return HouseTypesExtrasEnum.allExtras[index].getCellTitle
+        }
+    }
+    
+    var getActionArray: [HouseTypesExtrasEnum] {
+        if items.count == 0 {
+            return HouseTypesExtrasEnum.allHouseTypes
+        } else {
+            return HouseTypesExtrasEnum.allExtras
+        }
+    }
+    
+    func getItemCost(index: Int) -> String {
+        return items[index].getCost
+    }
+    
+    func getItemTitle(index: Int) -> String {
+        return items[index].getCellTitle
     }
     
 }
