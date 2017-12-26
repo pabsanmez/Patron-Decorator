@@ -11,14 +11,10 @@ import Foundation
 final class AddiMacProHouseExtra: HouseExtrasDecorator {
     
     override var description: String {
-        return self.description + "iMac"
+        return self.houseInstance.description + "iMac"
     }
     
     override var totalCost: Int {
-        return self.totalCost + 13000
-    }
-    
-    required init(houseType: HouseProtocol) {
-        super.init(houseType: houseType)
+        return self.houseInstance.totalCost + (Int(HouseTypesExtrasEnum.addiMacPro.getCost) ?? 0)
     }
 }

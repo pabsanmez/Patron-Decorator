@@ -16,7 +16,7 @@ class MainTableFooterView: UIView {
   override func awakeFromNib() {
     super.awakeFromNib()
     lbltotalAmountTitle.text = "Total cost:"
-    lblTotalAmountValue.text = "+500"
+    lblTotalAmountValue.text = "0"
   }
 
 }

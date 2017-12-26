@@ -11,14 +11,10 @@ import Foundation
 final class AddShowerHouseExtra: HouseExtrasDecorator {
     
     override var description: String {
-        return self.description + "shower"
+        return self.houseInstance.description + "shower"
     }
     
     override var totalCost: Int {
-        return self.totalCost + 400
-    }
-    
-    required init(houseType: HouseProtocol) {
-        super.init(houseType: houseType)
+        return self.houseInstance.totalCost + (Int(HouseTypesExtrasEnum.addShower.getCost) ?? 0)
     }
 }

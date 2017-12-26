@@ -11,15 +11,11 @@ import Foundation
 final class AddAppleTvHouseExtra: HouseExtrasDecorator {
     
     override var description: String {
-        return self.description + "apple TV"
+        return self.houseInstance.description + "apple TV"
     }
     
     override var totalCost: Int {
-        return self.totalCost + 200
-    }
-    
-    required init(houseType: HouseProtocol) {
-        super.init(houseType: houseType)
+        return self.houseInstance.totalCost + (Int(HouseTypesExtrasEnum.addAppleTv.getCost) ?? 0)
     }
 }
 

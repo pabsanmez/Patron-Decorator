@@ -9,7 +9,7 @@
 import UIKit
 
 class MainTableViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     let viewModel = MainTableViewModel()
     
@@ -17,14 +17,14 @@ class MainTableViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         setTableView()
-      
+        
     }
-  
+    
     func configureUI() {
         self.title = "Decorator Pattern"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
-  
+    
     @objc func addTapped() {
         showAlert()
     }
@@ -39,13 +39,13 @@ class MainTableViewController: UIViewController {
                 [weak self]
                 _ in
                 self?.viewModel.addNewItem(newItem: newAction)
-                self?.tableView.reloadData()
+                self?.refreshTableData()
             })
             alert.addAction(action)
         }
         // Cancel button
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    
+        
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
@@ -57,11 +57,19 @@ class MainTableViewController: UIViewController {
         registerCells()
     }
     
+    private func refreshTableData() {
+        if let footerView = tableView.tableFooterView as? MainTableFooterView  {
+            footerView.lblTotalAmountValue.text = viewModel.getTotalCost
+        }
+        tableView.reloadData()
+
+    }
+    
     private func setTableFooter() {
         if let view = UINib(nibName: "MainTableFooterView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView {
-            if let view = view as? MainTableFooterView {
-                view.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
-                tableView.tableFooterView = view
+            if let footerView = view as? MainTableFooterView {
+                footerView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
+                tableView.tableFooterView = footerView
             }
         }
     }
@@ -87,13 +95,12 @@ extension MainTableViewController: UITableViewDataSource, UITableViewDelegate {
         cell.lblPrice.text = viewModel.getItemCost(index: indexPath.row)
         return cell
     }
-  
-  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    if (editingStyle == UITableViewCellEditingStyle.delete) {
-        viewModel.removeItem(index: indexPath.row)
-        tableView.reloadData()
-    }
-  }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            viewModel.removeItem(index: indexPath.row)
+            refreshTableData()
+        }
+    }
 }
 

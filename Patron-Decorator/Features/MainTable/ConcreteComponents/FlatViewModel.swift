@@ -11,7 +11,7 @@ import Foundation
 class FlatViewModel: HouseProtocol {
   
   var totalCost: Int {
-    return 11000
+    return (Int(HouseTypesExtrasEnum.flat.getCost) ?? 0)
   }
   
   

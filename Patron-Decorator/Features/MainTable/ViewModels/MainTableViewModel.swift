@@ -30,17 +30,17 @@ final class MainTableViewModel {
             items = [.flat]
             itemCompleted = FlatViewModel()
         case .addShower:
-            guard var itemCompleted = itemCompleted else { return }
+            guard let itemCompleted = itemCompleted else { return }
             items.append(.addShower)
-            itemCompleted = AddShowerHouseExtra(houseType: itemCompleted)
+            self.itemCompleted = AddShowerHouseExtra(houseType: itemCompleted)
         case .addAppleTv:
-             guard var itemCompleted = itemCompleted else { return }
+            guard let itemCompleted = itemCompleted else { return }
             items.append(.addAppleTv)
-            itemCompleted = AddAppleTvHouseExtra(houseType: itemCompleted)
+            self.itemCompleted = AddAppleTvHouseExtra(houseType: itemCompleted)
         case .addiMacPro:
-             guard var itemCompleted = itemCompleted else { return }
+            guard let itemCompleted = itemCompleted else { return }
             items.append(.addiMacPro)
-            itemCompleted = AddiMacProHouseExtra(houseType: itemCompleted)
+            self.itemCompleted = AddiMacProHouseExtra(houseType: itemCompleted)
         }
     }
     
@@ -90,6 +90,10 @@ final class MainTableViewModel {
     
     func getItemTitle(index: Int) -> String {
         return items[index].getCellTitle
+    }
+    
+    var getTotalCost: String {
+        return String(describing: itemCompleted?.totalCost)
     }
     
 }

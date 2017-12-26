@@ -11,7 +11,7 @@ import Foundation
 class CottageViewModel: HouseProtocol {
   
   var totalCost: Int {
-    return 4000
+    return (Int(HouseTypesExtrasEnum.cottage.getCost) ?? 0)
   }
   
   

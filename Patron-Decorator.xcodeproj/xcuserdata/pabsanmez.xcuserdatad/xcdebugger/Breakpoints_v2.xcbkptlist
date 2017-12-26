@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Patron-Decorator/Features/MainTable/ViewModels/MainTableViewModel.swift"
+            timestampString = "536011232.411222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "addNewItem(newItem:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Patron_Decorator.MainTableViewModel.addNewItem(newItem: Patron_Decorator.HouseTypesExtrasEnum) -&gt; ()"
+                  moduleName = "Patron-Decorator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pabsanmez/Documents/Patron-Decorator/Patron-Decorator/Features/MainTable/ViewModels/MainTableViewModel.swift"
+                  timestampString = "536010855.819462"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "2958">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Patron_Decorator.MainTableViewModel.addNewItem(newItem: Patron_Decorator.HouseTypesExtrasEnum) -&gt; ()"
+                  moduleName = "Patron-Decorator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pabsanmez/Documents/Patron-Decorator/Patron-Decorator/Features/MainTable/ViewModels/MainTableViewModel.swift"
+                  timestampString = "536010855.822916"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "3137">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
