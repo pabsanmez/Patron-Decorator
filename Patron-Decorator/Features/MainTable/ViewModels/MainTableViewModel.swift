@@ -10,5 +10,22 @@ import Foundation
 
 final class MainTableViewModel {
     
+    fileprivate var items = [HouseProtocol]()
+    
+    var getItems: [HouseProtocol] {
+        return items
+    }
+    
+    var getItemsCount: Int {
+        return items.count
+    }
+    
+    func addNewItem(newItem: HouseProtocol) {
+        items.append(newItem)
+    }
+    
+    func removeItem(index: Int) {
+        items.remove(at: index)
+    }
     
 }

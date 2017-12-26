@@ -26,6 +26,9 @@ class MainTableViewController: UIViewController {
     }
   
     @objc func addTapped() {
+        viewModel.addNewItem(newItem: HouseViewModel())
+        viewModel.addNewItem(newItem: AddShowerHouseExtra(houseType: viewModel.getItems.last!))
+        tableView.reloadData()
     }
     
     private func setTableView(){
@@ -52,7 +55,7 @@ class MainTableViewController: UIViewController {
 //Methods TableView Delegate & DataSource.
 extension MainTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.getItemsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +67,8 @@ extension MainTableViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if (editingStyle == UITableViewCellEditingStyle.delete) {
-      //Eliminar celda
+        viewModel.removeItem(index: indexPath.row)
+        tableView.reloadData()
     }
   }
     
